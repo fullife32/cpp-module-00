@@ -6,35 +6,29 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 18:02:25 by eassouli          #+#    #+#             */
-/*   Updated: 2021/12/18 18:33:42 by eassouli         ###   ########.fr       */
+/*   Updated: 2021/12/20 14:57:25 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include <iostream>
-# include <cstring>
+# include <stdio.h>
+# include <ctype.h>
+
+void	toupper_str(char *str) {
+
+	for (int i = 0; str[i]; i++)
+		putchar(toupper(str[i]));
+}
 
 int		main(int ac, char **av) {
 	
-	int		i;
-	char	*str = NULL;
-
 	if (ac == 1)
-		std::cout << "* LOUD AND UNBREARABLE FEEDBACK NOISE *" << std::endl;
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	else
 	{
-		i = 1;
-		while (i < ac)
-		{
-			strcat(str, av[i]);
-			i++;
-		}
-		i = 0;
-		while (str[i])
-		{
-			str[i] = toupper(str[i]);
-			i++;
-		}
-		std::cout << str << std::endl;
+		for (int i = 1; i < ac; i++)
+			toupper_str(av[i]);
+		std::cout << std::endl;
 	}
 	return 0;
 }

@@ -6,7 +6,7 @@
 #    By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2021/12/18 18:06:53 by eassouli         ###   ########.fr        #
+#    Updated: 2021/12/20 14:56:36 by eassouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ vpath %.h $(foreach dir, $(INC_DIR)/, $(dir):)
 
 CC 		=	clang++
 
-CFLAG 	= 	-Wall -Wextra -Werror
+CFLAG 	= 	-Wall -Wextra -Werror -std=c++98
 
 # ----------------- #
 #	  FUNCTIONS		#
