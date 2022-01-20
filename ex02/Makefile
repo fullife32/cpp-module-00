@@ -6,7 +6,7 @@
 #    By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2021/12/20 17:11:30 by eassouli         ###   ########.fr        #
+#    Updated: 2022/01/20 12:38:00 by eassouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,15 +14,14 @@
 #	 VARIABLES		#
 # ----------------- #
 
-NAME	=	pagesBlanches
+NAME	=	globalBanksters
 
 OBJ_DIR	=	obj/
 INC_DIR	=	./
 SRC_DIR	=	./
 
-SRC		= 	pagesBlanches.cpp \
-			contact.cpp \
-			phoneBook.cpp
+SRC		= 	tests.cpp \
+			Account.cpp
 
 OBJ		=	$(addprefix $(OBJ_DIR),$(SRC:%.cpp=%.o))
 HEADERS	= 	$(foreach dir, $(INC_DIR), $(wildcard $(dir)/*.hpp))
