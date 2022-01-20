@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 17:05:40 by eassouli          #+#    #+#             */
-/*   Updated: 2022/01/20 14:48:41 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/01/20 14:59:23 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main() {
 			return 0;
 		if (input == "EXIT")
 			exit = true;
-		else if (input == "ADD") // define
+		else if (input == "ADD")
 		{
 			if (i < 8)
 			{
