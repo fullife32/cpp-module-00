@@ -6,12 +6,12 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 17:05:40 by eassouli          #+#    #+#             */
-/*   Updated: 2022/01/20 01:49:17 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/01/20 12:05:07 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phoneBook.hpp"
-#include "contact.hpp"
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 #include <iostream>
 
 int	main() {
