@@ -6,55 +6,58 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 17:02:52 by eassouli          #+#    #+#             */
-/*   Updated: 2022/01/20 12:24:22 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/01/20 14:53:37 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook( void ) {
+PhoneBook::PhoneBook() { }
 
-	return;
-}
-
-PhoneBook::~PhoneBook( void ) {
-
-	return;
-}
+PhoneBook::~PhoneBook() { }
 
 void	PhoneBook::addContact( Contact *contact) {
-
 	std::string	firstName;
 	std::string	lastName;
 	std::string	nickName;
 	std::string	phoneNumber;
 	std::string	secret;
-	
+
 	std::cout << "Your first name : ";
-	std::cin >> firstName;
+	std::getline(std::cin, firstName);
+	if (std::cin.eof())
+		exit(0);
 	contact->setFirstName(firstName);
 	std::cout << "Your last name : ";
-	std::cin >> lastName;
+	std::getline(std::cin, lastName);
+	if (std::cin.eof())
+		exit(0);
 	contact->setLastName(lastName);
 	std::cout << "Your nickname (or gamertag) : ";
-	std::cin >> nickName;
+	std::getline(std::cin, nickName);
+	if (std::cin.eof())
+		exit(0);
 	contact->setNick(nickName);
 	std::cout << "Your phone number : ";
-	std::cin >> phoneNumber;
+	std::getline(std::cin, phoneNumber);
+	if (std::cin.eof())
+		exit(0);
 	contact->setPhone(phoneNumber);
 	std::cout << "Your darkest secret : ";
-	std::cin >> secret;
+	std::getline(std::cin, secret);
+	if (std::cin.eof())
+		exit(0);
 	contact->setSecret(secret);
 }
 
 void	PhoneBook::searchContact( int contactNumber, Contact contact[8] ) {
 
 	int			i = 0;
-	int			valid = 0;
 	int			index;
+	bool		menu = false;
 	std::string	buff;
 
-	while (valid == 0)
+	while (!menu)
 	{
 		std::cout << std::endl << "|" << std::setw(10) << "index";
 		std::cout << "|" << std::setw(10) << "first name";
@@ -72,7 +75,9 @@ void	PhoneBook::searchContact( int contactNumber, Contact contact[8] ) {
 		std::cout << std::endl;
 		i = 0;
 		std::cout << "Enter contact index / 0 to menu : ";
-		std::cin >> buff;
+		std::getline(std::cin, buff);
+		if (std::cin.eof())
+			exit(0);
 		index =  (int)buff[0] - 48;
 		if (index >= 1 && index <= 8 && index <= contactNumber && buff.size() == 1)
 		{
@@ -80,10 +85,10 @@ void	PhoneBook::searchContact( int contactNumber, Contact contact[8] ) {
 			std::cout << "Last name : " << contact[index - 1].getLastName() << std::endl;
 			std::cout << "Nickname : " << contact[index - 1].getNick() << std::endl;
 			std::cout << "Phone number : " << contact[index - 1].getPhone() << std::endl;
-			std::cout << "Darkest secret : " << contact[index - 1].getSecret() << std::endl << std::endl;
+			std::cout << "Darkest secret : " << contact[index - 1].getSecret() << std::endl;
 		}
 		else if (index == 0 && buff.size() == 1)
-			valid = 1;
+			menu = true;
 		else
 			std::cout << "Invalid input" << std::endl;
 	}

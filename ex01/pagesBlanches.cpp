@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 17:05:40 by eassouli          #+#    #+#             */
-/*   Updated: 2022/01/20 12:05:07 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/01/20 14:48:41 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,16 @@ int	main() {
 	PhoneBook	phoneBook;
 	std::string	input;
 	int			i = 0;
-	int			exit = 0; // move to class
+	bool		exit = false;
 
-	while (exit == 0)
+	while (!exit)
 	{
 		std::cout << "You can : ADD, SEARCH or EXIT: ";
-		std::cin >> input;
-		if (input == "EXIT") // define
-			exit = 1;
+		std::getline(std::cin, input);
+		if (std::cin.eof())
+			return 0;
+		if (input == "EXIT")
+			exit = true;
 		else if (input == "ADD") // define
 		{
 			if (i < 8)
@@ -42,7 +44,9 @@ int	main() {
 			if (i == 0)
 				std::cout << "No contact found" << std::endl;
 			else
+			{
 				phoneBook.searchContact(i, phoneBook.contact);
+			}
 		}
 		else
 			std::cout << "Incorrect Input" << std::endl;

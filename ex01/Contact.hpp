@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 16:59:19 by eassouli          #+#    #+#             */
-/*   Updated: 2022/01/20 00:09:12 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/01/20 14:54:21 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@
 #include <iostream>
 
 class Contact {
-
 public:
-
 	Contact( void );
 	~Contact( void );
 
@@ -35,13 +33,11 @@ public:
 	void	setSecret( std::string secret );
 
 private:
-
 	std::string	_firstName;
 	std::string	_lastName;
 	std::string	_nickname;
 	std::string	_phoneNumber;
 	std::string	_secret;
-
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 17:01:31 by eassouli          #+#    #+#             */
-/*   Updated: 2022/01/20 12:05:13 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/01/20 14:55:15 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,11 @@
 
 #include "Contact.hpp"
 #include <iomanip>
+#include <istream>
+#include <cstdlib>
 
 class PhoneBook {
-
 public:
-
-
 	PhoneBook( void );
 	~PhoneBook( void );
 
