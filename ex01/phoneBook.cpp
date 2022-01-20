@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 17:02:52 by eassouli          #+#    #+#             */
-/*   Updated: 2022/01/20 12:05:17 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/01/20 12:24:22 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,26 +63,27 @@ void	PhoneBook::searchContact( int contactNumber, Contact contact[8] ) {
 
 		while (i < contactNumber)
 		{
-			std::cout << "|" << std::setw(10) << i;
-			std::string truc = contact[i].getFirstName();
+			std::cout << "|" << std::setw(10) << i + 1;
 			std::cout << "|" << std::setw(10) << this->format( contact[i].getFirstName() );
 			std::cout << "|" << std::setw(10) << this->format( contact[i].getLastName() );
-			std::cout << "|" << std::setw(10) << this->format( contact[i].getNick() ) << "|" << std::endl << std::endl;
+			std::cout << "|" << std::setw(10) << this->format( contact[i].getNick() ) << "|" << std::endl;
 			i++;
 		}
+		std::cout << std::endl;
 		i = 0;
-		std::cout << "Enter contact index you want to see : ";
+		std::cout << "Enter contact index / 0 to menu : ";
 		std::cin >> buff;
 		index =  (int)buff[0] - 48;
-		if (index >= 0 && index <= 7 && index < contactNumber && buff.size() == 1)
+		if (index >= 1 && index <= 8 && index <= contactNumber && buff.size() == 1)
 		{
-			valid = 1;
-			std::cout << std::endl << "First name : " << contact[index].getFirstName() << std::endl;
-			std::cout << "Last name : " << contact[index].getLastName() << std::endl;
-			std::cout << "Nickname : " << contact[index].getNick() << std::endl;
-			std::cout << "Phone number : " << contact[index].getPhone() << std::endl;
-			std::cout << "Darkest secret : " << contact[index].getSecret() << std::endl << std::endl;
+			std::cout << std::endl << "First name : " << contact[index - 1].getFirstName() << std::endl;
+			std::cout << "Last name : " << contact[index - 1].getLastName() << std::endl;
+			std::cout << "Nickname : " << contact[index - 1].getNick() << std::endl;
+			std::cout << "Phone number : " << contact[index - 1].getPhone() << std::endl;
+			std::cout << "Darkest secret : " << contact[index - 1].getSecret() << std::endl << std::endl;
 		}
+		else if (index == 0 && buff.size() == 1)
+			valid = 1;
 		else
 			std::cout << "Invalid input" << std::endl;
 	}
