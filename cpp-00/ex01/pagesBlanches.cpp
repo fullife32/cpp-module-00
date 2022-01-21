@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 17:05:40 by eassouli          #+#    #+#             */
-/*   Updated: 2022/01/20 14:59:23 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/01/21 16:03:53 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main() {
 		{
 			if (i < 8)
 			{
-				phoneBook.addContact(&phoneBook.contact[i]);
+				phoneBook.addContact(phoneBook.contact[i]);
 				i++;
 			}
 			else

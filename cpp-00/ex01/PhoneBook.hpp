@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phoneBook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 17:01:31 by eassouli          #+#    #+#             */
-/*   Updated: 2022/01/20 14:55:15 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/01/21 16:04:17 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 
 	Contact	contact[8];
 	
-	void		addContact( Contact *contact );
+	void		addContact( Contact &contact );
 	void		searchContact( int contactNumber, Contact contact[8] );
 	std::string	format( std::string str );
 };

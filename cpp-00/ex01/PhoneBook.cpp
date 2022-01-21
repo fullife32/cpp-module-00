@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phoneBook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 17:02:52 by eassouli          #+#    #+#             */
-/*   Updated: 2022/01/20 14:53:37 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/01/21 16:04:39 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ PhoneBook::PhoneBook() { }
 
 PhoneBook::~PhoneBook() { }
 
-void	PhoneBook::addContact( Contact *contact) {
+void	PhoneBook::addContact( Contact &contact) {
 	std::string	firstName;
 	std::string	lastName;
 	std::string	nickName;
@@ -27,27 +27,27 @@ void	PhoneBook::addContact( Contact *contact) {
 	std::getline(std::cin, firstName);
 	if (std::cin.eof())
 		exit(0);
-	contact->setFirstName(firstName);
+	contact.setFirstName(firstName);
 	std::cout << "Your last name : ";
 	std::getline(std::cin, lastName);
 	if (std::cin.eof())
 		exit(0);
-	contact->setLastName(lastName);
+	contact.setLastName(lastName);
 	std::cout << "Your nickname (or gamertag) : ";
 	std::getline(std::cin, nickName);
 	if (std::cin.eof())
 		exit(0);
-	contact->setNick(nickName);
+	contact.setNick(nickName);
 	std::cout << "Your phone number : ";
 	std::getline(std::cin, phoneNumber);
 	if (std::cin.eof())
 		exit(0);
-	contact->setPhone(phoneNumber);
+	contact.setPhone(phoneNumber);
 	std::cout << "Your darkest secret : ";
 	std::getline(std::cin, secret);
 	if (std::cin.eof())
 		exit(0);
-	contact->setSecret(secret);
+	contact.setSecret(secret);
 }
 
 void	PhoneBook::searchContact( int contactNumber, Contact contact[8] ) {
