@@ -6,7 +6,7 @@
 #    By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2022/01/21 16:33:02 by eassouli         ###   ########.fr        #
+#    Updated: 2022/01/21 16:31:21 by eassouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,15 +14,16 @@
 #	 VARIABLES		#
 # ----------------- #
 
-NAME	=	pagesBlanches
+NAME	=	brainz
 
 OBJ_DIR	=	obj/
 INC_DIR	=	./
 SRC_DIR	=	./
 
 SRC		= 	main.cpp \
-			Contact.cpp \
-			PhoneBook.cpp
+			Zombie.cpp \
+			newZombie.cpp \
+			randomChump.cpp
 
 OBJ		=	$(addprefix $(OBJ_DIR),$(SRC:%.cpp=%.o))
 HEADERS	= 	$(foreach dir, $(INC_DIR), $(wildcard $(dir)/*.hpp))
