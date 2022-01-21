@@ -6,14 +6,14 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 16:59:19 by eassouli          #+#    #+#             */
-/*   Updated: 2022/01/21 16:38:08 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/01/21 19:38:10 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_H
 # define CONTACT_H
 
-#include <cstring>
+#include <string>
 #include <iostream>
 
 class Contact {

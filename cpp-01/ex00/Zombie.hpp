@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:33:15 by eassouli          #+#    #+#             */
-/*   Updated: 2022/01/21 18:30:45 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/01/21 19:37:36 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define ZOMBIE_H
 
 #include <iostream>
-#include <cstring>
+#include <string>
 #include <cstdlib>
 
 class Zombie
