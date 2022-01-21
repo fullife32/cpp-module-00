@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 17:05:40 by eassouli          #+#    #+#             */
-/*   Updated: 2022/01/21 16:03:53 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/01/21 16:08:08 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main() {
 
 	while (!exit)
 	{
-		std::cout << "You can : ADD, SEARCH or EXIT: ";
+		std::cout << "You can : ADD, SEARCH or EXIT : ";
 		std::getline(std::cin, input);
 		if (std::cin.eof())
 			return 0;
