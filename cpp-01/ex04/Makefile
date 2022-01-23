@@ -6,7 +6,7 @@
 #    By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2022/01/21 20:28:55 by eassouli         ###   ########.fr        #
+#    Updated: 2022/01/22 23:44:35 by eassouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,16 +14,13 @@
 #	 VARIABLES		#
 # ----------------- #
 
-NAME	=	violence
+NAME	=	replace
 
 OBJ_DIR	=	obj/
 INC_DIR	=	./
 SRC_DIR	=	./
 
-SRC		= 	main.cpp \
-			Weapon.cpp \
-			HumanA.cpp \
-			HumanB.cpp
+SRC		= 	main.cpp
 
 OBJ		=	$(addprefix $(OBJ_DIR),$(SRC:%.cpp=%.o))
 HEADERS	= 	$(foreach dir, $(INC_DIR), $(wildcard $(dir)/*.hpp))
