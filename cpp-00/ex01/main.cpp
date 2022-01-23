@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 17:05:40 by eassouli          #+#    #+#             */
-/*   Updated: 2022/01/21 16:32:28 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/01/23 20:39:21 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main() {
 		{
 			if (i < 8)
 			{
-				phoneBook.addContact(phoneBook.contact[i]);
+				phoneBook.addContact(phoneBook.getOneContact(i));
 				i++;
 			}
 			else
@@ -44,7 +44,7 @@ int	main() {
 				std::cout << "No contact found" << std::endl;
 			else
 			{
-				phoneBook.searchContact(i, phoneBook.contact);
+				phoneBook.searchContact(i, phoneBook.getAllContacts());
 			}
 		}
 		else

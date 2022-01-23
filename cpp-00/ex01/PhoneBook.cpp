@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 17:02:52 by eassouli          #+#    #+#             */
-/*   Updated: 2022/01/21 16:04:39 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/01/23 20:38:50 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,4 +106,12 @@ std::string	PhoneBook::format( std::string str ) {
 		str.resize(10, '.');
 	}
 	return (str);
+}
+
+Contact&	PhoneBook::getOneContact( int i ) {
+	return this->_contact[i];
+}
+
+Contact*	PhoneBook::getAllContacts() {
+	return this->_contact;
 }
