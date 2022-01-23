@@ -6,7 +6,7 @@
 #    By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2022/01/22 23:15:45 by eassouli         ###   ########.fr        #
+#    Updated: 2022/01/23 22:26:57 by eassouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ INC_DIR	=	./
 SRC_DIR	=	./
 
 SRC		= 	main.cpp \
-			Karen.cpp \
+			Karen.cpp
 
 OBJ		=	$(addprefix $(OBJ_DIR),$(SRC:%.cpp=%.o))
 HEADERS	= 	$(foreach dir, $(INC_DIR), $(wildcard $(dir)/*.hpp))
