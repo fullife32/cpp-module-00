@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 20:24:34 by eassouli          #+#    #+#             */
-/*   Updated: 2022/01/23 23:23:02 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/01/24 18:05:23 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Fixed {
 private:
 	int					_raw;
-	static const int	_bits = 8;
+	static int const	_bits = 8;
 public:
 	Fixed();
 	~Fixed();
