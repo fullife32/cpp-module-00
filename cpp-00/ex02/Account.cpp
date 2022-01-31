@@ -6,12 +6,13 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 02:13:30 by eassouli          #+#    #+#             */
-/*   Updated: 2022/01/31 18:14:16 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/01/31 18:35:02 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
+#include <ctime>
 
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
@@ -90,5 +91,13 @@ void	Account::displayStatus( void ) const {
 }
 
 void	Account::_displayTimestamp( void ) {
-	std::cout << "[19920104_091532] ";
+	time_t rawtime;
+	struct tm * timeinfo;
+	char buffer [20];
+
+	time(&rawtime);
+	timeinfo = localtime(&rawtime);
+
+	strftime (buffer, 20, "%Y%m%d_%H%M%S", timeinfo);
+	std::cout << "[" << buffer << "] ";
 }
