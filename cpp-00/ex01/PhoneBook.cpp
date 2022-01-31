@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 17:02:52 by eassouli          #+#    #+#             */
-/*   Updated: 2022/01/23 20:38:50 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/01/31 18:53:46 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,9 @@ void	PhoneBook::searchContact( int contactNumber, Contact contact[8] ) {
 		while (i < contactNumber)
 		{
 			std::cout << "|" << std::setw(10) << i + 1;
-			std::cout << "|" << std::setw(10) << this->format( contact[i].getFirstName() );
-			std::cout << "|" << std::setw(10) << this->format( contact[i].getLastName() );
-			std::cout << "|" << std::setw(10) << this->format( contact[i].getNick() ) << "|" << std::endl;
+			std::cout << "|" << std::setw(10) << this->_format( contact[i].getFirstName() );
+			std::cout << "|" << std::setw(10) << this->_format( contact[i].getLastName() );
+			std::cout << "|" << std::setw(10) << this->_format( contact[i].getNick() ) << "|" << std::endl;
 			i++;
 		}
 		std::cout << std::endl;
@@ -95,7 +95,7 @@ void	PhoneBook::searchContact( int contactNumber, Contact contact[8] ) {
 	return;
 }
 
-std::string	PhoneBook::format( std::string str ) {
+std::string	PhoneBook::_format( std::string str ) {
 
 	int	size;
 
