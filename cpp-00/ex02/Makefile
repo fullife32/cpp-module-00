@@ -6,7 +6,7 @@
 #    By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2022/01/31 17:26:11 by eassouli         ###   ########.fr        #
+#    Updated: 2022/01/31 19:12:07 by eassouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 #	 VARIABLES		#
 # ----------------- #
 
-NAME	=	globalBanksters
+NAME	=	globalBankstersUnited
 
 OBJ_DIR	=	obj/
 INC_DIR	=	./
