@@ -1,0 +1,306 @@
+--------------------          --------------------
+--------------------     Namespaces     --------------------
+
+namespace Foo {
+	int truc = 5;
+	void f( void ) { return 6; }
+}
+
+namespace Bar = Foo;
+
+--------------------     Stdio streams     --------------------
+
+#include <iostream>
+
+std::cout << truc << std::endl; // ecrire sortir standard
+std::cin >> buff;				// recuperer entree standard
+std::count << You entered << buff << std::endl;
+
+--------------------     Class and instance     --------------------
+
+Sample.hpp
+class Sample {
+
+public:
+
+	Sample( void ); // constructor
+	~Sample( void ); // destructor
+
+};
+
+Sample.cpp
+Sample::Sample( void ) {
+	
+	std::cout << "Constructor called" << std::endl;
+	return;
+}
+
+Sample::~Sample( void ) {
+	
+	std::cout << "Destructor called" << std::endl;
+	return;
+}
+
+int main() {
+
+	Sample instance;
+
+	return 0;
+
+}
+
+--------------------     Member attributes and member function     --------------------
+
+class Sample {
+
+public:
+
+	int	foo;
+
+	Sample( void );
+	~Sample( void );
+
+	void	bar( void );
+
+};
+
+void	Sample::bar( void ) {
+
+	std::cout << "Member function bar called" << std::endl;
+	return;
+}
+
+int main() {
+
+	Sample instance;
+
+	instant.foo = 42;
+	std::cout << "instance.foo" << instance.foo << std::endl;
+
+	instance.bar();
+
+	return 0;
+
+}
+
+--------------------     This     --------------------
+
+Sample::Sample( void ) {
+
+	this->foo = 42; // pointeur sur instance courante
+	std::cout << "this->foo: " << this->foo << std::endl;
+
+	this->bar();
+
+	return;
+}
+
+--------------------     Initialization list     --------------------
+
+class Sample2 {
+
+public:
+
+	char	a1;
+	int		a2;
+	float	a3;
+
+	Sample( char p1, int p2, float p3 );
+	~Sample( void );
+}
+
+Sample2::Sample2( char p1, int p2, float p3 ) : a1(p1), a2(p2), a3(p3) {
+
+	std::cout << "this->a1 - " << this->a1 << std::endl;
+	std::cout << "this->a2 - " << this->a2 << std::endl;
+	std::cout << "this->a3 - " << this->a3 << std::endl;
+}
+
+int main() {
+
+	Sample2 instance1( 'a', 42, 4.2f );
+	Sample2 instance2( 'z', 13, 3.14f );
+
+	return 0;
+}
+
+--------------------     Const     --------------------
+
+class Sample {
+
+public:
+
+	float const pi;
+
+	Sample( float const f ); // Declaration
+	~Sample( void );
+
+	void	bar( void ) const; // Toujours definir en const si instance non modifiee (read only)
+};
+
+
+Sample::Sample( float const f ) : pi( f ) { // Definition
+	
+	return;
+}
+
+--------------------     Visibility     --------------------
+
+class Sample {
+
+public:
+
+	int	publicFoo;
+
+	Sample( void );
+	~Sample( void );
+
+	void	publicBar( void ) const;
+
+
+private: // utilisable seulement dans une fonction de la classe publique
+
+	int		_privateFoo; // mettre _ so private
+
+	void	_privateBar( void ) const;
+
+};
+
+--------------------     Class vs struct     --------------------
+
+struct Sample { // struct scope toujours public / class a un scope toujours prive
+
+	int	foo;
+
+	Sample( void );
+	~Sample( void );
+
+	void	bar( void ) const;
+
+};
+
+--------------------     Accessors C++     --------------------
+
+class Sample {
+
+public:
+
+	Sample( void );
+	~Sample( void ); // marche comme un proxy
+
+	int		getFoo( void ) const; //prefixe get pour recuperer valeur privee
+	void	setFoo( int v ); //prefixe set pour modifier valeur privee
+
+
+private:
+
+	int		_foo;
+
+};
+
+int	Sample::getFoo( void ) const {
+
+	return this->_foo;
+}
+
+void	Sample::setFoo( int v ) { // permet d'avoir la main sur la modification d'une valeur privee
+
+	if ( v >= 0 )
+		this->_foo = v;
+	
+	return;
+}
+
+--------------------     Comparisons C++     --------------------
+
+class Sample {
+
+public:
+
+	Sample( int v );
+	~Sample( void );
+
+	int		getFoo( void ) const;
+	int		compare( Sample * other ) const;
+
+
+private:
+
+	int		_foo;
+
+};
+
+int		Sample::compare( Sample * other ) {
+
+	if ( this->_foo < other->getFoo() )
+		return -1;
+	else if ( this->_foo > other->getFoo() )
+		return 1;
+	
+	return 0;
+}
+
+int	main() {
+
+	Sample instance1( 42 );
+	Sample instance2( 42 );
+
+	&instance1 == &instance1 // Physiquement egales
+	&instance1 != &instance2 // Physiquement non egales
+	
+	Mais
+
+	instance1.compare( &instance1 ) == instance1.compare( &instance2 )
+	// Structurellement egales
+}
+
+--------------------     Non member attributes and non member functions     --------------------
+
+class Sample {
+
+public:
+
+	Sample( void );
+	~Sample( void );
+
+	static int	getNbInst( void );
+
+
+private:
+
+	static int	_nbInst; // permet de partager valeur entre plusieurs instances
+
+};
+
+int	Sample:getNbInst( void ) {
+
+	return Sample::_nbInst;
+}
+
+int	Sample::_nbInst = 0; // initaliser attribut non membre (statique)
+
+--------------------     Pointers to members     --------------------
+
+int		foo;
+void	bar( void ) const;
+
+int		main() {
+
+	Sample		instance;
+	Sample *	instancep = &instance;
+
+	int			Sample::*p = NULL;
+	void		(Sample::*f)( void ) const;
+
+	p = &Sample::foo;
+
+	instance.*p = 21;
+	instancep->*p = 42;
+
+	f = &Sample::bar;
+
+	(instance.*f)();
+	(instancep->*f)();
+
+	return 0;
+}
