@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 19:57:10 by eassouli          #+#    #+#             */
-/*   Updated: 2022/01/22 23:40:55 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/02 14:15:06 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	Karen::complain( std::string level ) {
 	int	i;
 	for (i = 0; i < 4; i++)
 	{
-		if (this->logs[i].level == level)
+		if (level.compare(this->logs[i].level) == 0)
 			break;
 	}
 
