@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 19:57:10 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/02 14:05:20 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/02 16:03:19 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ std::string	replaceLine(std::string str, std::string s1, std::string s2) {
 
 	while (found != std::string::npos)
 	{
-		str.replace(found, s1.length(), s2);
+		str.erase(found, s1.length());
+		str.insert(found, s2);
 		found = str.find(s1.c_str(), found + s2.length(), s1.length());
 	}
 	return (str);
