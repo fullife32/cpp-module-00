@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 19:57:10 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/02 16:03:19 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/02 16:16:16 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,9 @@ int	main(int ac, char* av[]) {
 	while (!ifs.eof() && !ifs.fail())
 	{
 		std::getline(ifs, dst);
-		ofs << replaceLine(dst, original, replace) << std::endl;
+		ofs << replaceLine(dst, original, replace);
+		if (!ifs.eof() && !ifs.fail())
+			ofs << std::endl;
 	}
 	ofs.close();
 	ifs.close();
