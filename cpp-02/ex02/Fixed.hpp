@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 20:24:34 by eassouli          #+#    #+#             */
-/*   Updated: 2022/01/25 19:24:07 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/01/25 23:39:57 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ public:
 	Fixed	operator--();
 	Fixed	operator--( int );
 	
-	static Fixed		&min( Fixed &num_one, Fixed &num_two );
-	static Fixed		&max( Fixed &num_one, Fixed &num_two );
-	static Fixed const	&min( Fixed const &num_one, Fixed const &num_two );
-	static Fixed const	&max( Fixed const &num_one, Fixed const &num_two );
+	static Fixed		&min( Fixed &numOne, Fixed &numTwo );
+	static Fixed		&max( Fixed &numOne, Fixed &numTwo );
+	static Fixed const	&min( Fixed const &numOne, Fixed const &numTwo );
+	static Fixed const	&max( Fixed const &numOne, Fixed const &numTwo );
 };
 
 std::ostream	&operator<<( std::ostream &o, Fixed const &n );

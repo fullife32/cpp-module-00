@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 20:26:33 by eassouli          #+#    #+#             */
-/*   Updated: 2022/01/25 19:53:11 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/04 16:04:36 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,45 +48,27 @@ int	Fixed::toInt() const {
 }
 
 bool	Fixed::operator>( Fixed const &other ) const {
-	if (this->getRawBits() > other.getRawBits())
-		return true;
-	else
-		return false;
+	return other < *this;
 }
 
 bool	Fixed::operator<( Fixed const &other ) const {
-	if (this->getRawBits() < other.getRawBits())
-		return true;
-	else
-		return false;
+	return this->getRawBits() < other.getRawBits();
 }
 
 bool	Fixed::operator>=( Fixed const &other ) const {
-	if (this->getRawBits() >= other.getRawBits())
-		return true;
-	else
-		return false;
+	return !(*this < other);
 }
 
 bool	Fixed::operator<=( Fixed const &other ) const {
-	if (this->getRawBits() <= other.getRawBits())
-		return true;
-	else
-		return false;
+	return !(other < *this);
 }
 
 bool	Fixed::operator==( Fixed const &other ) const {
-	if (this->getRawBits() == other.getRawBits())
-		return true;
-	else
-		return false;
+	return this->getRawBits() == other.getRawBits();
 }
 
 bool	Fixed::operator!=( Fixed const &other ) const {
-	if (this->getRawBits() != other.getRawBits())
-		return true;
-	else
-		return false;
+	return !(*this == other);
 }
 
 Fixed	Fixed::operator+( Fixed const &other ) const {
@@ -145,36 +127,36 @@ Fixed	Fixed::operator--( int ) {
 	return tmp;
 }
 
-Fixed	&Fixed::min( Fixed &num_one, Fixed &num_two )
+Fixed	&Fixed::min( Fixed &numOne, Fixed &numTwo )
 {
-	if (num_one < num_two)
-		return num_one;
+	if (numOne < numTwo)
+		return numOne;
 	else
-		return num_two;
+		return numTwo;
 }
 
-Fixed	&Fixed::max( Fixed &num_one, Fixed &num_two )
+Fixed	&Fixed::max( Fixed &numOne, Fixed &numTwo )
 {
-	if (num_one > num_two)
-		return num_one;
+	if (numOne > numTwo)
+		return numOne;
 	else
-		return num_two;
+		return numTwo;
 }
 
-Fixed const	&Fixed::min( Fixed const &num_one, Fixed const &num_two )
+Fixed const	&Fixed::min( Fixed const &numOne, Fixed const &numTwo )
 {
-	if (num_one < num_two)
-		return num_one;
+	if (numOne < numTwo)
+		return numOne;
 	else
-		return num_two;
+		return numTwo;
 }
 
-Fixed const	&Fixed::max( Fixed const &num_one, Fixed const &num_two )
+Fixed const	&Fixed::max( Fixed const &numOne, Fixed const &numTwo )
 {
-	if (num_one > num_two)
-		return num_one;
+	if (numOne > numTwo)
+		return numOne;
 	else
-		return num_two;
+		return numTwo;
 }
 
 std::ostream	&operator<<( std::ostream &o, Fixed const &f ) {

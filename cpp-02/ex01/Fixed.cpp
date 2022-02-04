@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 20:26:33 by eassouli          #+#    #+#             */
-/*   Updated: 2022/01/24 18:42:58 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/04 15:48:25 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ Fixed::Fixed( int const fixeInt ) : _raw(fixeInt << _bits) {
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed( float const fixeFloat ) {
+Fixed::Fixed( float const fixeFloat ) : _raw(roundf(fixeFloat * (1 << _bits))) {
 	std::cout << "Float constructor called" << std::endl;
-	_raw = roundf(fixeFloat * (1 << _bits));
 }
 
 Fixed::~Fixed() {
