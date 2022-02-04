@@ -6,7 +6,7 @@
 #    By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2022/02/01 14:38:19 by eassouli         ###   ########.fr        #
+#    Updated: 2022/02/04 15:37:28 by eassouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ vpath %.hpp $(foreach dir, $(INC_DIR)/, $(dir):)
 #	 COMPILATION	#
 # ----------------- #
 
-CC		=	clang++
+CC		=	c++
 
 CFLAG	=	-Wall -Wextra -Werror -std=c++98
 IFLAG	=	$(foreach dir, $(INC_DIR), -I $(dir))
