@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 18:13:44 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/07 23:08:19 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/07 23:54:10 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	ScavTrap &operator=( ScavTrap const &other );
 
 	void	attack( const std::string &target );
-	void	guardGate();
+	void	guardGate() const;
 };
 
 #endif

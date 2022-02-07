@@ -6,26 +6,29 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 18:12:04 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/07 23:22:13 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/07 23:54:05 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap( std::string name ) : ClapTrap(name) {
-	std::cout << "ScavTrap Default Constructor Called" << std::endl;
+	std::cout << name << ": ScavTrap Default Constructor Called" << std::endl;
+	_hitPts = 100;
+	_energyPts = 50;
+	_attackDmg = 20;
 }
 
 ScavTrap::~ScavTrap() {
-	std::cout << "ScavTrap Default Destructor Called" << std::endl;
+	std::cout << _name << ": ScavTrap Default Destructor Called" << std::endl;
 }
 
 ScavTrap::ScavTrap( ScavTrap const &other ) : ClapTrap(other) {
-	std::cout << "ScavTrap Copy Constructor Called" << std::endl;
+	std::cout << _name << ": ScavTrap Copy Constructor Called" << std::endl;
 }
 
 ScavTrap &ScavTrap::operator=( ScavTrap const &other ) {
-	std::cout << "ScavTrap Assignment Operator Called" << std::endl;
+	std::cout << _name << ": ScavTrap Assignment Operator Called" << std::endl;
 	if ( this == &other )
 		return *this;
 	_name = other._name;
@@ -48,6 +51,6 @@ void	ScavTrap::attack( const std::string &target ) {
 	std::cout << "ScavTrap " << _name << " attacks " << target << " with a silver sword, causing " << _attackDmg << " points of damage!" << std::endl;
 }
 
-void	ScavTrap::guardGate() {
+void	ScavTrap::guardGate() const {
 	std::cout << "ScavTrap " << _name << " prepare itself to block!" << std::endl;
 }
