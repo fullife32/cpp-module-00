@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 14:44:05 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/07 23:24:29 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/08 00:11:41 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,17 @@
 int	main ( void ) {
 	ClapTrap	geralt("Geralt");
 	ScavTrap	kratos("Kratos");
-
 	std::cout << std::endl;
+
+	geralt.announce();
+	kratos.announce();
+	std::cout << std::endl;
+
+	kratos.guardGate();
+	geralt.attack("Kratos");
 	kratos.attack("Geralt");
 	geralt.takeDamage(20);
 	geralt.beRepaired(20);
-	kratos.guardGate();
-	geralt.attack("Kratos");
 	std::cout << std::endl;
 
 	return 0;
