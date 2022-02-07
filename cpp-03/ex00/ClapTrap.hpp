@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 20:24:34 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/02 17:14:55 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/07 17:01:50 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
 	int			_energyPts;
 	int			_attackDmg;
 public:
-	ClapTrap();
+	ClapTrap( std::string name );
 	~ClapTrap();
 	ClapTrap( ClapTrap const &other );
 	ClapTrap &operator=( ClapTrap const &other );
