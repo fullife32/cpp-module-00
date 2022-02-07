@@ -6,26 +6,26 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 20:26:33 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/07 23:21:54 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/08 00:05:05 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap( std::string name ) : _name(name), _hitPts(100), _energyPts(50), _attackDmg(20) {
-	std::cout << "ClapTrap Default Constructor Called" << std::endl;
+ClapTrap::ClapTrap( std::string name ) : _name(name), _hitPts(10), _energyPts(10), _attackDmg(0) {
+	std::cout << name << ": ClapTrap Default Constructor Called" << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "ClapTrap Default Destructor Called" << std::endl;
+	std::cout << _name << ": ClapTrap Default Destructor Called" << std::endl;
 }
 
 ClapTrap::ClapTrap( ClapTrap const &other ) : _name(other._name), _hitPts(other._hitPts), _energyPts(other._energyPts), _attackDmg(other._attackDmg) {
-	std::cout << "ClapTrap Copy Constructor Called" << std::endl;
+	std::cout << _name << ": ClapTrap Copy Constructor Called" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=( ClapTrap const &other ) {
-	std::cout << "ClapTrap Assignment Operator Called" << std::endl;
+	std::cout << _name << ": ClapTrap Assignment Operator Called" << std::endl;
 	if ( this == &other )
 		return *this;
 	_name = other._name;
@@ -72,4 +72,8 @@ void	ClapTrap::beRepaired( unsigned int amount ) {
 	_energyPts--;
 	std::cout << "ClapTrap " << _name << " heals itself with a " << amount << " HP potion and has now " << _hitPts << " HP!" << std::endl;
 
+}
+
+void	ClapTrap::announce() const {
+	std::cout << _name << " has : " << _hitPts << "HP, " << _energyPts << "EP and does " << _attackDmg << " damages." << std::endl;
 }

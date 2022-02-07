@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 20:24:34 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/07 23:02:34 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/08 00:05:15 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ public:
 	virtual void	attack( const std::string &target );
 	void	takeDamage( unsigned int amount );
 	void	beRepaired( unsigned int amount );
+
+	void	announce() const;
 };
 
 #endif

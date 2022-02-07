@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 20:24:34 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/07 17:01:50 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/07 23:58:06 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ public:
 	void	attack( const std::string &target );
 	void	takeDamage( unsigned int amount );
 	void	beRepaired( unsigned int amount );
+
+	void	announce() const;
 };
 
 #endif

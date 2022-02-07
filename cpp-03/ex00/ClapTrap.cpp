@@ -6,26 +6,26 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 20:26:33 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/07 18:09:28 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/08 00:04:18 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap( std::string name ) : _name(name), _hitPts(10), _energyPts(10), _attackDmg(0) {
-	std::cout << "Default Constructor Called" << std::endl;
+	std::cout << name << ": ClapTrap Default Constructor Called" << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "Default Destructor Called" << std::endl;
+	std::cout << _name << ": ClapTrap Default Destructor Called" << std::endl;
 }
 
 ClapTrap::ClapTrap( ClapTrap const &other ) : _name(other._name), _hitPts(other._hitPts), _energyPts(other._energyPts), _attackDmg(other._attackDmg) {
-	std::cout << "Copy Constructor Called" << std::endl;
+	std::cout << _name << ": ClapTrap Copy Constructor Called" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=( ClapTrap const &other ) {
-	std::cout << "Assignment Operator Called" << std::endl;
+	std::cout << _name << ": ClapTrap Assignment Operator Called" << std::endl;
 	if ( this == &other )
 		return *this;
 	_name = other._name;
@@ -70,6 +70,10 @@ void	ClapTrap::beRepaired( unsigned int amount ) {
 	}
 	_hitPts += amount;
 	_energyPts--;
-	std::cout << "ClapTrap " << _name << " heal itself with a " << amount << " HP potion and has now " << _hitPts << " HP!" << std::endl;
+	std::cout << "ClapTrap " << _name << " heals itself with a " << amount << " HP potion and has now " << _hitPts << " HP!" << std::endl;
 
+}
+
+void	ClapTrap::announce() const {
+	std::cout << _name << " has : " << _hitPts << "HP, " << _energyPts << "EP and does " << _attackDmg << " damages." << std::endl;
 }
