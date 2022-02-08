@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 14:44:05 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/08 02:23:40 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/08 15:14:28 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,9 @@ int	main ( void ) {
 	std::cout << std::endl;
 
 	blueDiamond.whoAmI();
+	blueDiamond.beRepaired(10);
+	blueDiamond.guardGate();
+	blueDiamond.highFivesGuys();
 	std::cout << std::endl;
 
 	geralt.announce();
