@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 14:44:05 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/08 00:22:25 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/08 02:21:20 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ int	main ( void ) {
 	edward.attack("Kratos");
 	kratos.takeDamage(30);
 	kratos.beRepaired(10);
+	std::cout << std::endl;
+
+	geralt.announce();
+	kratos.announce();
+	edward.announce();
 	std::cout << std::endl;
 
 	return 0;
