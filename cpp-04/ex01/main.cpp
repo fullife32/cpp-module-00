@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 14:44:05 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/09 14:43:56 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/09 16:34:39 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,49 +15,35 @@
 #include "WrongCat.hpp"
 
 int	main ( void ) {
-	const Animal* meta = new Animal();
-	const Animal* dog = new Dog();
-	const Animal* charly = new Dog("Charly");
-	const Animal* cat = new Cat();
-	const Animal* bella = new Cat("Bella");
+	Animal*	tab[10];
+
+	for (int i = 0; i < 5; i++)
+		tab[i] = new Cat();
+	std::cout << std::endl;
+	for (int i = 5; i < 10; i++)
+		tab[i] = new Dog();
+	std::cout << std::endl;
+	
+	tab[0]->makeSound();
+	tab[0]->printIdeas();
+	std::cout << std::endl;
+	tab[5]->makeSound();
+	tab[5]->printIdeas();
 	std::cout << std::endl;
 
-	const WrongAnimal* wrongMeta = new WrongAnimal();
-	const WrongAnimal* wrongCat = new WrongCat();
-	const WrongAnimal* berly = new WrongCat("Berly");
+	for (int i = 0; i < 10; i++)
+		delete tab[i];
 	std::cout << std::endl;
 
-
-	std::cout << dog->getType() << " is a Dog" << std::endl;
-	std::cout << charly->getType() << " is a Dog" << std::endl;
-	std::cout << cat->getType() << " is a Cat" << std::endl;
-	std::cout << bella->getType() << " is a Cat" << std::endl << std::endl;
-
-	std::cout << wrongCat->getType() << " is a WrongCat" << std::endl;
-	std::cout << berly->getType() << " is a WrongCat" << std::endl << std::endl;
-
-	meta->makeSound();
-	dog->makeSound();
-	charly->makeSound();
-	cat->makeSound();
-	bella->makeSound();
+	std::cout << "Deep Copy Test:" << std::endl;
+	Cat  first;
+	{
+		Cat second;
+		first = second;
+	}
 	std::cout << std::endl;
-
-	wrongMeta->makeSound();
-	wrongCat->makeSound();
-	berly->makeSound();
+	first.printIdeas();
 	std::cout << std::endl;
-
-	delete berly;
-	delete wrongCat;
-	delete wrongMeta;
-	std::cout << std::endl;
-
-	delete bella;
-	delete cat;
-	delete charly;
-	delete dog;
-	delete meta;
 
 	return 0;
 }

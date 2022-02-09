@@ -6,7 +6,7 @@
 #    By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2022/02/09 14:33:46 by eassouli         ###   ########.fr        #
+#    Updated: 2022/02/09 14:55:44 by eassouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 #	 VARIABLES		#
 # ----------------- #
 
-NAME	=	animal
+NAME	=	brain
 
 OBJ_DIR	=	obj/
 INC_DIR	=	./
@@ -25,7 +25,8 @@ SRC		= 	main.cpp \
 			Dog.cpp \
 			Cat.cpp \
 			WrongAnimal.cpp \
-			WrongCat.cpp
+			WrongCat.cpp \
+			Brain.cpp
 
 OBJ		=	$(addprefix $(OBJ_DIR),$(SRC:%.cpp=%.o))
 HEADERS	= 	$(foreach dir, $(INC_DIR), $(wildcard $(dir)/*.hpp))
