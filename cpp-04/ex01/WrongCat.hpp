@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 14:28:59 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/09 14:29:28 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/09 18:55:06 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define WRONG_CAT_H
 
 #include "WrongAnimal.hpp"
+#include <iostream>
+#include <string>
 
 class WrongCat : public WrongAnimal {
 public:

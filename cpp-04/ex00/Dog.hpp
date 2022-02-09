@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 18:57:53 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/09 16:29:44 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/09 18:55:31 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define DOG_H
 
 #include "Animal.hpp"
+#include <iostream>
+#include <string>
 
 class Dog : public Animal {
 public:

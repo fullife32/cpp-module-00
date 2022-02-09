@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 18:56:51 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/09 16:29:39 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/09 18:55:26 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define CAT_H
 
 #include "Animal.hpp"
+#include <iostream>
+#include <string>
 
 class Cat : public Animal {
 public:

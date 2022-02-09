@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 18:56:51 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/09 16:24:51 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/09 18:55:16 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include "Animal.hpp"
 #include "Brain.hpp"
+#include <iostream>
+#include <string>
 
 class Cat : public Animal {
 private:
