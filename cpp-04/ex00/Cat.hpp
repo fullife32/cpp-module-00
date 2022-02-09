@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 18:56:51 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/09 14:14:26 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/09 16:29:39 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Cat : public Animal {
 public:
 	Cat();
 	Cat( std::string type );
-	~Cat();
+	virtual ~Cat();
 	Cat( Cat const &other );
 	Cat &operator=( Cat const &other );
 
