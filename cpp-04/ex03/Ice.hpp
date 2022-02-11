@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/11 19:08:54 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/11 19:09:39 by eassouli         ###   ########.fr       */
+/*   Created: 2022/02/11 13:27:11 by eassouli          #+#    #+#             */
+/*   Updated: 2022/02/11 18:00:07 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef I_CHARACTER_H
-# define I_CHARACTER_H
+#ifndef ICE_H
+# define ICE_H
 
-#include <string>
 #include "AMateria.hpp"
+#include "Character.hpp"
 
-class ICharacter {
+class Ice : public AMateria {
 public:
-	virtual ~ICharacter() {}
-	virtual std::string const & getName() const = 0;
-	virtual void equip(AMateria* m) = 0;
-	virtual void unequip(int idx) = 0;
-	virtual void use(int idx, ICharacter& target) = 0;
+	Ice();
+	virtual ~Ice();
+	Ice( Ice const &other );
+	Ice &operator=( Ice const &other );
+
+	virtual Ice*	clone() const;
+	virtual void	use( ICharacter& target ) const;
 };
 
 #endif

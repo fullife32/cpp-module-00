@@ -6,7 +6,7 @@
 #    By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2022/02/09 19:07:38 by eassouli         ###   ########.fr        #
+#    Updated: 2022/02/11 16:36:18 by eassouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,12 @@ OBJ_DIR	=	obj/
 INC_DIR	=	./
 SRC_DIR	=	./
 
-SRC		= 	main.cpp
+SRC		= 	main.cpp \
+			AMateria.cpp \
+			Ice.cpp \
+			Cure.cpp \
+			MateriaSource.cpp \
+			Character.cpp
 
 OBJ		=	$(addprefix $(OBJ_DIR),$(SRC:%.cpp=%.o))
 HEADERS	= 	$(foreach dir, $(INC_DIR), $(wildcard $(dir)/*.hpp))
