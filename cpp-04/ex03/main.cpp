@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 13:12:37 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/11 20:12:50 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/12 18:28:16 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,12 @@ int	main() {
 	std::cout << "Unequip test:" << std::endl;
 	marley->unequip(4);
 	marley->unequip(0);
+	marley->unequip(1);
+	marley->unequip(2);
+	marley->unequip(3);
+	marley->unequip(0);
+	tmp = source->createMateria("cure");
+	marley->equip(tmp);
 	marley->unequip(0);
 
 	delete marley;

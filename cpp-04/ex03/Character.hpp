@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 19:13:08 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/11 19:32:15 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/12 18:20:27 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ private:
 	Character() { }
 	std::string const	m_name;
 	AMateria*			m_inv[4];
+	AMateria*			m_floor[10];
+	void	drop( AMateria* m );
 public:
 	Character( std::string name );
 	virtual ~Character();
