@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 14:44:05 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/09 14:43:56 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/12 17:58:53 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main ( void ) {
 	const WrongAnimal* wrongMeta = new WrongAnimal();
 	const WrongAnimal* wrongCat = new WrongCat();
 	const WrongAnimal* berly = new WrongCat("Berly");
+	WrongCat			rightCat;
 	std::cout << std::endl;
 
 
@@ -46,6 +47,7 @@ int	main ( void ) {
 	wrongMeta->makeSound();
 	wrongCat->makeSound();
 	berly->makeSound();
+	rightCat.makeSound();
 	std::cout << std::endl;
 
 	delete berly;
