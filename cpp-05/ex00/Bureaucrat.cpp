@@ -6,23 +6,22 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 19:10:57 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/13 21:56:26 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/13 23:48:53 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat( std::string name, int grade ) : m_name(name) {
+Bureaucrat::Bureaucrat( std::string name, int grade ) : m_name(name), m_grade(grade) {
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
-	m_grade = grade;
 }
 
 Bureaucrat::~Bureaucrat() { }
 
-Bureaucrat::Bureaucrat( Bureaucrat const &other ) : m_grade(other.m_grade) { }
+Bureaucrat::Bureaucrat( Bureaucrat const &other ) : m_name(other.m_name), m_grade(other.m_grade) { }
 
 Bureaucrat &Bureaucrat::operator=( Bureaucrat const &other ) {
 	if ( this == &other )
@@ -43,12 +42,14 @@ void	Bureaucrat::upGrade() {
 	if (m_grade == 1)
 		throw Bureaucrat::GradeTooHighException();
 	m_grade--;
+	std::cout << m_name << " has been up to grade " << m_grade << "." << std::endl;
 }
 
 void	Bureaucrat::downGrade() {
 	if (m_grade == 150)
 		throw Bureaucrat::GradeTooLowException();
 	m_grade++;
+	std::cout << m_name << " has been down to grade " << m_grade << "." << std::endl;
 }
 
 std::ostream	&operator<<( std::ostream &o, Bureaucrat const &b ) {
