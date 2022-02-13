@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 13:29:31 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/11 19:37:01 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/13 20:21:31 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ AMateria*	MateriaSource::createMateria(std::string const & type) {
 		return 0;
 	}
 	for (int i = 0; i < 4; i++) {
-		if (m_stock[i] && type.compare(m_stock[i]->getType())) {
+		if (m_stock[i] && type.compare(m_stock[i]->getType()) == 0) {
 			return m_stock[i]->clone();
 		}
 	}
