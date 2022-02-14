@@ -47,13 +47,13 @@ public:
 	class NotSignedException : public std::exception {
 		public:
 			virtual const char*	what() const throw() {
-				return "Error: This form is not signed yet";
+				return "this form is not signed yet";
 			}
 	};
-	class ExecGradeTooHighException : public std::exception {
+	class ExecGradeTooLowException : public std::exception {
 		public:
 			virtual const char*	what() const throw() {
-				return "Error: The form execution grade is too high for this bureaucrat";
+				return "the bureaucrat's grade is too low to execute";
 			}
 	};
 
