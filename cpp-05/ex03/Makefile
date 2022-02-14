@@ -6,7 +6,7 @@
 #    By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2022/02/14 00:14:48 by eassouli         ###   ########.fr        #
+#    Updated: 2022/02/14 01:59:23 by eassouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 #	 VARIABLES		#
 # ----------------- #
 
-NAME	=	form_28B
+NAME	=	intern
 
 OBJ_DIR	=	obj/
 INC_DIR	=	./
@@ -25,7 +25,8 @@ SRC		= 	main.cpp \
 			Form.cpp \
 			ShrubberyCreationForm.cpp \
 			RobotomyRequestForm.cpp \
-			PresidentialPardonForm.cpp
+			PresidentialPardonForm.cpp \
+			Intern.cpp
 
 OBJ		=	$(addprefix $(OBJ_DIR),$(SRC:%.cpp=%.o))
 HEADERS	= 	$(foreach dir, $(INC_DIR), $(wildcard $(dir)/*.hpp))

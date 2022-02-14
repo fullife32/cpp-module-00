@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 21:04:23 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/14 01:51:37 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/14 02:00:41 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int	main() {
 	/* Shrubbery Creation Form */
