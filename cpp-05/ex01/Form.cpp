@@ -51,7 +51,7 @@ void	Form::beSigned( Bureaucrat& b ) {
 		m_signed = true;
 	}
 	else
-		throw Form::GradeTooHighException();
+		throw Form::GradeTooLowException();
 }
 
 std::ostream	&operator<<( std::ostream &o, Form const &f ) {

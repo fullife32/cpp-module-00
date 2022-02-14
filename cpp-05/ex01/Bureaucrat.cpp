@@ -53,13 +53,13 @@ void	Bureaucrat::downGrade() {
 }
 
 void	Bureaucrat::signForm( Form& f) {
-	if (m_grade <= f.getGradeSign())
-	{
+	try {
 		f.beSigned(*this);
 		std::cout << m_name << " signed " << f.getName() << "." << std::endl;
 	}
-	else
+	catch (std::exception& e) {
 		std::cout << m_name << " couldn't sign " << f.getName() << " because their grade is too low." << std::endl;
+	}
 }
 
 std::ostream	&operator<<( std::ostream &o, Bureaucrat const &b ) {
