@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 02:00:07 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/14 02:35:10 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/14 16:28:21 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,27 @@
 
 class Intern {
 private:
-	typedef Form (Intern::*t_callClass)();
-	struct m_formPair
+	struct s_formPair
 	{
 		std::string	formName;
-		t_callClass	callClass;
+		Form*		(*callback)(std::string target);
 	};
-
-	m_formPair	forms[3];
+	static const	s_formPair	m_forms[3];
+	static Form*	m_shrubbery( std::string target );
+	static Form*	m_robotomy( std::string target );
+	static Form*	m_presidential( std::string target );
 public:
 	Intern();
 	~Intern();
 	Intern( Intern const &other );
 	Intern &operator=( Intern const &other );
+
+	class NoFormFound : public std::exception {
+		public:
+			virtual const char*	what() const throw() {
+				return "Error: The form you have chosen does not match any existing form.";
+			}
+	};
 
 	Form*	makeForm( std::string form, std::string target ) const;
 };
