@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 01:08:14 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/14 01:41:05 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/14 18:03:31 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void RobotomyRequestForm::execute( Bureaucrat const & executor ) const {
 	
 	int num;
 
-	std::srand(std::time(0) + std::rand() % 1000);
+	std::srand(time(0) + std::rand() % 1000);
 	num = std::rand() % 2;
 	if (num == 0)
 		std::cout << "BZZZZZZZZZ!!! " << this->getName() << " has successfully been robotomized!" << std::endl;
