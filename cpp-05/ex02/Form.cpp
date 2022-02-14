@@ -51,14 +51,14 @@ void	Form::beSigned( Bureaucrat& b ) {
 		m_signed = true;
 	}
 	else
-		throw Form::GradeTooHighException();
+		throw Form::GradeTooLowException();
 }
 
 void	Form::execute( Bureaucrat const& executor ) const {
 	if (m_signed == false)
 		throw Form::NotSignedException();
 	else if (executor.getGrade() > m_gradeExec)
-		throw Form::ExecGradeTooHighException();
+		throw Form::ExecGradeTooLowException();
 }
 
 std::ostream	&operator<<( std::ostream &o, Form const &f ) {

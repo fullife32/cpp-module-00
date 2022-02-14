@@ -26,6 +26,7 @@ int	main() {
 		std::cout << tree << std::endl;
 		antoine.executeForm(tree);
 		tree.execute(antoine);
+
 	}
 	catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
@@ -41,6 +42,7 @@ int	main() {
 		std::cout << tree << std::endl;
 		antoine.executeForm(tree);
 		tree.execute(antoine);
+
 	}
 	catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
