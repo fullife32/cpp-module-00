@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:07:01 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/15 16:12:37 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/15 19:19:14 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,28 @@
 class Convert {
 private:
 	std::string m_arg;
-	std::string	m_type;
-	double		m_nb;
+	
+	bool	m_isChar;
+	bool	m_isInt;
+	bool	m_isFloat;
+	bool	m_isDouble;
+	bool	m_isEmpty;
+
+	char	m_nChar;
+	int		m_nInt;
+	float	m_nFloat;
+	double	m_nDouble;
+
+	void	m_setType();
+	void	m_setChar( char& nb, std::string s );
+	void	m_setInt( int& nb, std::string s );
+	void	m_setFloat( float& nb, std::string s );
+	void	m_setDouble( double& nb, std::string s );
 
 	void	m_printChar( double nb );
 	void	m_printInt( double nb );
 	void	m_printFloat( double nb );
 	void	m_printDouble( double nb );
-
-	void	m_setType();
-	void	m_setNb();
 public:
 	Convert( std::string arg );
 	~Convert();
