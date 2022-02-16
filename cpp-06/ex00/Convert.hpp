@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:07:01 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/15 19:19:14 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/16 13:58:41 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 # define CONVERT_H
 
 #include <string>
+#include <cstring>
 #include <sstream>
 #include <iostream>
 #include <cstdlib>
 #include <cctype>
 #include <limits>
+#include <iomanip>
 
 class Convert {
 private:
@@ -31,15 +33,13 @@ private:
 	bool	m_isEmpty;
 
 	char	m_nChar;
-	int		m_nInt;
-	float	m_nFloat;
 	double	m_nDouble;
 
 	void	m_setType();
-	void	m_setChar( char& nb, std::string s );
-	void	m_setInt( int& nb, std::string s );
-	void	m_setFloat( float& nb, std::string s );
-	void	m_setDouble( double& nb, std::string s );
+	void	m_setChar( std::string s );
+	void	m_setInt( std::string s );
+	void	m_setFloat( std::string s );
+	void	m_setDouble( std::string s );
 
 	void	m_printChar( double nb );
 	void	m_printInt( double nb );
