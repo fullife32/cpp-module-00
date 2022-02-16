@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 21:04:23 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/16 15:03:36 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/16 16:31:50 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,21 @@ Data*	deserialize(uintptr_t raw) {
 }
 
 int	main() {
-	Data		ptr;
-	uintptr_t	raw_tmp;
-	Data*		new_ptr;
+	Data		data;
+	uintptr_t	raw;
+	Data*		new_data;
 
-	ptr.n = 10;
-	ptr.s = "Hello World!";
-	std::cout << "ptr.n:      " << ptr.n << ",      ptr.s: " << ptr.s << std::endl;
+	data.n = 10;
+	data.s = "Hello World!";
+	std::cout << "data.n:      " << data.n << ",      data.s: " << data.s << std::endl;
 
-	raw_tmp = serialize(&ptr);
-	new_ptr = deserialize(raw_tmp);
+	raw = serialize(&data);
+	new_data = deserialize(raw);
 
-	std::cout << "new_ptr->n: " << new_ptr->n << ", new_ptr->s: " << new_ptr->s << std::endl << std::endl;
-	std::cout << "ptr address:     " << &ptr << std::endl;
-	std::cout << "raw_tmp address: " << "0x" << std::hex << raw_tmp << std::endl;
-	std::cout << "new_ptr address: " << new_ptr << std::endl;
+	std::cout << "new_data->n: " << new_data->n << ", new_data->s: " << new_data->s << std::endl << std::endl;
+	std::cout << "data address:     " << &data << std::endl;
+	std::cout << "raw address:      " << "0x" << std::hex << raw << std::endl;
+	std::cout << "new_data address: " << new_data << std::endl;
 
 	return 0;
 }
