@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:09:04 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/16 14:15:42 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/16 16:23:05 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ Convert::Convert( std::string arg ) : m_arg(arg) {
 	m_isFloat = false;
 	m_isDouble = false;
 	m_isEmpty = false;
+	m_nChar = 0;
+	m_nDouble = 0;
 	m_setType();
 }
 
@@ -31,6 +33,13 @@ Convert &Convert::operator=( Convert const &other ) {
 	if ( this == &other )
 		return *this;
 	m_arg = other.m_arg;
+	m_isChar = other.m_isChar;
+	m_isInt = other.m_isInt;
+	m_isFloat = other.m_isFloat;
+	m_isDouble = other.m_isDouble;
+	m_isEmpty = other.m_isEmpty;
+	m_nChar = other.m_nChar;
+	m_nDouble = other.m_nDouble;
 	return *this;
 }
 
@@ -65,6 +74,7 @@ void	Convert::m_setInt( std::string s ) {
 void	Convert::m_setFloat( std::string s ) {
 	char*	pEnd;
 	double	tmp;
+
 	tmp = std::strtof(s.c_str(), &pEnd);
 	if (*pEnd == 'f' && std::strlen(pEnd) == 1)
 		m_isFloat = true;
