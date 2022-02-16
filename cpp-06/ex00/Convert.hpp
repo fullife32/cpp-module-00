@@ -6,21 +6,19 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:07:01 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/16 13:58:41 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/16 16:14:03 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONVERT_H
 # define CONVERT_H
 
+#include <iostream>
+#include <iomanip>
 #include <string>
 #include <cstring>
-#include <sstream>
-#include <iostream>
-#include <cstdlib>
-#include <cctype>
 #include <limits>
-#include <iomanip>
+#include <cstdlib>
 
 class Convert {
 private:
