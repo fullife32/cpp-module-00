@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 18:12:00 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/17 19:30:11 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/17 20:00:51 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,6 @@ int main(int, char**)
 	{
 		Array<int> tmp = numbers;
 		Array<int> test(tmp);
-	}
-
-	// SIZE
-	{
-		Array<int> tmp(10);
-		try {
-			tmp = numbers;
-		}
-		catch(const std::exception& e)
-		{
-		std::cerr << e.what() << '\n';
-		}
 	}
 
 	for (int i = 0; i < MAX_VAL; i++)

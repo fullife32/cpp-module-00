@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 18:12:18 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/17 19:31:23 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/17 20:01:57 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,6 @@ public:
 	Array<T>	&operator=( Array<T> const &other ) {
 		if (this == &other)
 			return *this;
-		if (this->m_size != other.size()) {
-			throw Array<T>::NotSameSize();
-		}
 		if (this->m_array)
 			delete [] this->m_array;
 		this->m_size = other.m_size;
@@ -65,12 +62,6 @@ public:
 		public:
 			virtual const char*	what() const throw() {
 				return "This index is out of bound";
-			}
-	};
-	class NotSameSize : public std::exception {
-		public:
-			virtual const char*	what() const throw() {
-				return "These arrays don't have the same size";
 			}
 	};
 	
