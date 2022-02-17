@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 13:50:35 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/17 18:08:32 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/17 18:10:37 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <iostream>
 
-template < typename T>
+template < typename T >
 void	iter(T * array, size_t const size, void (*f)(T const &)) {
 	for (size_t i = 0; i < size; i++)
 		f(array[i]);
