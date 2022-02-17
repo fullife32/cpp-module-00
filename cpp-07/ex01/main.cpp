@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 14:12:39 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/17 18:09:00 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/17 19:48:11 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int main() {
 
 	::iter( tab, 5, print );
 	::iter( tab2, 5, print );
+	::iter( tab3, 3, print );
 	std::cout << std::endl;
 	::iter( tab, 5, upTen );
 	::iter( tab2, 5, upTenSample );
-	std::cout << std::endl;
-	::iter( tab3, 3, printFloat );
+	::iter( tab3, 3, upTen );
 
 	return 0;
 }
