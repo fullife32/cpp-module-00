@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 14:12:39 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/18 16:15:54 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/18 16:17:21 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 int main()
 {
 	Span sp = Span(10);
+
+	try {
+		std::cout << sp.shortestSpan() << std::endl;
+		std::cout << sp.longestSpan() << std::endl;
+	}
+	catch(std::exception& e) {
+		std::cout << e.what() << std::endl;
+	}
 
 	try {
 		sp.addNumber(6);
