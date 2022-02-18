@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 14:12:39 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/18 18:20:20 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/18 18:21:59 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,14 @@ int main()
 	}
 
 	Span spBig = Span(50000);
+
+	try {
+		std::cout << spBig.shortestSpan() << std::endl;
+		std::cout << spBig.longestSpan() << std::endl;
+	}
+	catch(std::exception& e) {
+		std::cout << e.what() << std::endl;
+	}
 
 	try {
 		spBig.addManyNumber(30000, 50000);
