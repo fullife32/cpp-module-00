@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 14:12:39 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/18 13:06:30 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/18 18:12:51 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@ int main () {
 	
 	
 	itL = ::easyFind(myList, 30);
+	if (itL != myList.end())
+		std::cout << *itL << std::endl;
+	else
+		std::cout << "No occurence found in this list" << std::endl;
+
+	itL = ::easyFind(myList, 50);
 	if (itL != myList.end())
 		std::cout << *itL << std::endl;
 	else
