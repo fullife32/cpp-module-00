@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 14:12:39 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/18 16:17:21 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/18 18:20:20 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-	Span sp = Span(10);
+	Span sp = Span(5);
 
 	try {
 		std::cout << sp.shortestSpan() << std::endl;
@@ -30,6 +30,7 @@ int main()
 		sp.addNumber(17);
 		sp.addNumber(9);
 		sp.addNumber(11);
+		sp.addNumber(45);
 	}
 	catch(std::exception& e) {
 		std::cout << e.what() << std::endl;
@@ -42,23 +43,26 @@ int main()
 		std::cout << e.what() << std::endl;
 	}
 
+	Span spBig = Span(50000);
+
 	try {
-		sp.addManyNumber(3, -100);
-		sp.addManyNumber(2, 100);
+		spBig.addManyNumber(30000, 50000);
+		spBig.addManyNumber(15000, 20);
+		spBig.addManyNumber(5000, -50000);
 	}
 	catch(std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
 
 	try {
-		sp.addNumber(42);
+		spBig.addManyNumber(1, 200);
 	}
 	catch(std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
 	try {
-		std::cout << sp.shortestSpan() << std::endl;
-		std::cout << sp.longestSpan() << std::endl;
+		std::cout << spBig.shortestSpan() << std::endl;
+		std::cout << spBig.longestSpan() << std::endl;
 	}
 	catch(std::exception& e) {
 		std::cout << e.what() << std::endl;

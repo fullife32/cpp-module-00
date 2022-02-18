@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 13:50:35 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/18 15:24:46 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/18 18:15:58 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 
 class Span {
 private:
+	Span() { }
 	unsigned int		m_size;
 	std::vector<int>	m_vec;
 public:
