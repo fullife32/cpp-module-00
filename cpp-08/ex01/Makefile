@@ -6,7 +6,7 @@
 #    By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/31 17:38:13 by lvirgini          #+#    #+#              #
-#    Updated: 2022/02/18 14:31:53 by eassouli         ###   ########.fr        #
+#    Updated: 2022/02/18 16:20:42 by eassouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 #	 VARIABLES		#
 # ----------------- #
 
-NAME	=	easyFind
+NAME	=	span
 
 OBJ_DIR	=	obj/
 INC_DIR	=	./
