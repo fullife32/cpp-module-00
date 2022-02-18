@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 13:50:35 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/18 14:51:54 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/18 15:24:46 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ public:
 	class NoSpanFound : public std::exception {
 		public:
 			virtual const char*     what() const throw() {
-				return "No Span found in this span";
+				return "No Span found";
 			}
 	};
 	class AlreadyFull : public std::exception {
@@ -48,7 +48,7 @@ public:
 	void	addNumber( int num );
 	int		shortestSpan();
 	int		longestSpan();
-	void	addManyNumber( std::vector<int>	vec );
+	void	addManyNumber( unsigned int n, int const num );
 };
 
 #endif

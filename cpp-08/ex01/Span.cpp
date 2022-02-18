@@ -6,7 +6,7 @@
 /*   By: eassouli <eassouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 13:09:31 by eassouli          #+#    #+#             */
-/*   Updated: 2022/02/18 14:55:33 by eassouli         ###   ########.fr       */
+/*   Updated: 2022/02/18 15:36:53 by eassouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ void	Span::addNumber( int num ) {
 }
 
 int		Span::shortestSpan() {
-	if (this->m_vec.size() == 0 || this->m_vec.size() == 1)
+	if (this->m_vec.size() <= 1)
 		throw Span::NoSpanFound();
 	std::vector<int>	tmp = this->m_vec;
 
 	std::sort(tmp.begin(), tmp.end());
 	
 	int shortest = tmp.at(1) - tmp.at(0);
-	for (unsigned int i = 1; i < this->m_size - 1; i++) {
+	for (unsigned int i = 1; i < this->m_vec.size() - 1; i++) {
 		shortest = std::min(tmp.at(i + 1) - tmp.at(i), shortest);
 	}
 	return shortest;
@@ -49,14 +49,14 @@ int		Span::shortestSpan() {
 int		Span::longestSpan() {
 	if (this->m_vec.size() == 0 || this->m_vec.size() == 1)
 		throw Span::NoSpanFound();
-	int min, max;
-	min = *std::min_element(this->m_vec.begin(), this->m_vec.end());
-	max = *std::max_element(this->m_vec.begin(), this->m_vec.end());
-	return max - min;
+	int longest;
+	longest = *std::max_element(this->m_vec.begin(), this->m_vec.end());
+	longest -= *std::min_element(this->m_vec.begin(), this->m_vec.end());
+	return longest;
 }
 
-void	Span::addManyNumber( std::vector<int>	vec ) {
-	if (vec.size() > this->m_size - this->m_vec.size())
+void	Span::addManyNumber( unsigned int n, int const num ) {
+	if (n > this->m_size - this->m_vec.size())
 		throw Span::AlreadyFull();
-	this->m_vec.insert(this->m_vec.end(), vec.begin(), vec.end());
+	this->m_vec.insert(this->m_vec.end(), n, num);
 }
